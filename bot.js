@@ -401,12 +401,19 @@ async function announceNextTurn(chat, game, prefix = '') {
 }
 
 // ─── CLIENT ────────────────────────────────────────────────────────────────
+const IS_RAILWAY   = !!process.env.RAILWAY_ENVIRONMENT;
+const AUTH_PATH    = IS_RAILWAY ? '/data' : '.';
+
 const client = new Client({
-  authStrategy: new LocalAuth(),
-  puppeteer: {
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  },
+  authStrategy: new LocalAuth({ dataPath: AUTH_PATH }),
+  puppeteer: IS_RAILWAY
+    ? {
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+      }
+    : {
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
 });
 
 client.on('qr', qr => {
