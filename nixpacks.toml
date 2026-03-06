@@ -1,13 +1,25 @@
 [phases.setup]
 aptPkgs = [
   "chromium-browser",
-  "chromium-browser-l10n",
   "chromium-codecs-ffmpeg",
   "fonts-liberation",
-  "fonts-dejavu",
-  "ca-certificates"
+  "ca-certificates",
+  "libglib2.0-0",
+  "libnss3",
+  "libatk1.0-0",
+  "libatk-bridge2.0-0",
+  "libcups2",
+  "libdrm2",
+  "libxkbcommon0",
+  "libxcomposite1",
+  "libxdamage1",
+  "libxfixes3",
+  "libxrandr2",
+  "libgbm1",
+  "libasound2",
+  "libpango-1.0-0",
+  "libcairo2"
 ]
 
 [variables]
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
-PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium-browser"
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "false"

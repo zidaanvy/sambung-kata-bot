@@ -403,15 +403,38 @@ async function announceNextTurn(chat, game, prefix = '') {
 // ─── CLIENT ────────────────────────────────────────────────────────────────
 const IS_RAILWAY   = !!process.env.RAILWAY_ENVIRONMENT;
 const AUTH_PATH    = IS_RAILWAY ? '/data' : '.';
-const CHROME_PATH  = process.env.PUPPETEER_EXECUTABLE_PATH
-                  || (IS_RAILWAY ? '/usr/bin/chromium-browser' : 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe');
+
+// Cari path Chrome yang tersedia
+const { execSync } = require('child_process');
+function findChrome() {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) return process.env.PUPPETEER_EXECUTABLE_PATH;
+  if (!IS_RAILWAY) return 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+  const candidates = [
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/snap/bin/chromium',
+  ];
+  for (const p of candidates) {
+    try { execSync(`test -f ${p}`); console.log('✅ Chrome ditemukan:', p); return p; } catch {}
+  }
+  // Coba which
+  try { return execSync('which chromium-browser || which chromium || which google-chrome').toString().trim(); } catch {}
+  console.warn('⚠️ Chrome tidak ditemukan, pakai default puppeteer');
+  return undefined;
+}
+const CHROME_PATH = findChrome();
+console.log('🌐 Chrome path:', CHROME_PATH);
+
+const puppeteerConfig = {
+  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
+};
+if (CHROME_PATH) puppeteerConfig.executablePath = CHROME_PATH;
 
 const client = new Client({
   authStrategy: new LocalAuth({ dataPath: AUTH_PATH }),
-  puppeteer: {
-    executablePath: CHROME_PATH,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
-  },
+  puppeteer: puppeteerConfig,
 });
 
 client.on('qr', qr => {
