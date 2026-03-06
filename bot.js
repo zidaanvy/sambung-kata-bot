@@ -404,7 +404,7 @@ async function announceNextTurn(chat, game, prefix = '') {
 const IS_RAILWAY   = !!process.env.RAILWAY_ENVIRONMENT;
 const AUTH_PATH    = IS_RAILWAY ? '/data' : '.';
 const CHROME_PATH  = process.env.PUPPETEER_EXECUTABLE_PATH
-                  || (IS_RAILWAY ? '/run/current-system/sw/bin/chromium' : 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe');
+                  || (IS_RAILWAY ? '/usr/bin/chromium-browser' : 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe');
 
 const client = new Client({
   authStrategy: new LocalAuth({ dataPath: AUTH_PATH }),
