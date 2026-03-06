@@ -1,35 +1,13 @@
 [phases.setup]
-nixPkgs = [
-  "chromium",
-  "glib",
-  "nss",
-  "nspr",
-  "atk",
-  "cups",
-  "dbus",
-  "expat",
-  "libdrm",
-  "libxcb",
-  "libxkbcommon",
-  "mesa",
-  "pango",
-  "cairo",
-  "alsa-lib",
-  "xorg.libX11",
-  "xorg.libXcomposite",
-  "xorg.libXdamage",
-  "xorg.libXext",
-  "xorg.libXfixes",
-  "xorg.libXrandr",
-  "xorg.libxshmfence",
-  "xorg.libXtst",
-  "freetype",
-  "harfbuzz",
-  "ca-certificates",
-  "fontconfig",
-  "ttf-dejavu"
+aptPkgs = [
+  "chromium-browser",
+  "chromium-browser-l10n",
+  "chromium-codecs-ffmpeg",
+  "fonts-liberation",
+  "fonts-dejavu",
+  "ca-certificates"
 ]
 
 [variables]
 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
-PUPPETEER_EXECUTABLE_PATH = "/run/current-system/sw/bin/chromium"
+PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium-browser"
