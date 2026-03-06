@@ -1,25 +1,34 @@
 [phases.setup]
-aptPkgs = [
-  "chromium-browser",
-  "chromium-codecs-ffmpeg",
-  "fonts-liberation",
+nixPkgs = [
+  "chromium",
+  "glib",
+  "nss",
+  "nspr",
+  "atk",
+  "at-spi2-atk",
+  "cups",
+  "dbus",
+  "libdrm",
+  "libxkbcommon",
+  "mesa",
+  "pango",
+  "cairo",
+  "alsa-lib",
+  "xorg.libX11",
+  "xorg.libXcomposite",
+  "xorg.libXdamage",
+  "xorg.libXext",
+  "xorg.libXfixes",
+  "xorg.libXrandr",
+  "xorg.libxshmfence",
+  "freetype",
+  "harfbuzz",
   "ca-certificates",
-  "libglib2.0-0",
-  "libnss3",
-  "libatk1.0-0",
-  "libatk-bridge2.0-0",
-  "libcups2",
-  "libdrm2",
-  "libxkbcommon0",
-  "libxcomposite1",
-  "libxdamage1",
-  "libxfixes3",
-  "libxrandr2",
-  "libgbm1",
-  "libasound2",
-  "libpango-1.0-0",
-  "libcairo2"
+  "fontconfig",
+  "expat",
+  "libgcc",
 ]
 
 [variables]
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "false"
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
+PUPPETEER_EXECUTABLE_PATH = "/run/current-system/sw/bin/chromium"
