@@ -1,0 +1,38 @@
+2026/03/05-22:41:54.046 2128 Reusing MANIFEST D:\Laboratory\sambung-kata-bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/03/05-22:41:54.048 2128 Recovering log #790
+2026/03/05-22:41:54.311 2128 Reusing old log D:\Laboratory\sambung-kata-bot\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000790.log 
+2026/03/05-22:41:54.312 2128 Delete type=2 #781
+2026/03/05-22:41:54.312 2128 Delete type=2 #782
+2026/03/05-22:41:54.312 2128 Delete type=2 #783
+2026/03/05-22:41:54.312 2128 Delete type=2 #784
+2026/03/05-22:41:54.312 2128 Delete type=2 #785
+2026/03/05-22:41:54.313 2128 Delete type=2 #786
+2026/03/05-22:41:54.313 2128 Delete type=2 #787
+2026/03/05-22:41:54.313 2128 Delete type=2 #788
+2026/03/05-22:41:54.313 2128 Delete type=2 #789
+2026/03/05-22:41:54.313 2128 Delete type=2 #791
+2026/03/05-22:42:41.923 2c0c Level-0 table #803: started
+2026/03/05-22:42:42.103 2c0c Level-0 table #803: 1361284 bytes OK
+2026/03/05-22:42:42.137 2c0c Delete type=0 #790
+2026/03/05-22:42:48.973 2c0c Compacting 1@1 + 9@2 files
+2026/03/05-22:42:49.327 2c0c Generated table #804@1: 32461 keys, 2376107 bytes
+2026/03/05-22:42:49.506 2c0c Generated table #805@1: 31815 keys, 2192971 bytes
+2026/03/05-22:42:49.642 2c0c Generated table #806@1: 3144 keys, 2161345 bytes
+2026/03/05-22:42:49.746 2c0c Generated table #807@1: 1045 keys, 2128616 bytes
+2026/03/05-22:42:50.006 2c0c Generated table #808@1: 22467 keys, 2234395 bytes
+2026/03/05-22:42:50.276 2c0c Generated table #809@1: 37739 keys, 2247617 bytes
+2026/03/05-22:42:50.468 2c0c Generated table #810@1: 29123 keys, 2163127 bytes
+2026/03/05-22:42:50.716 2c0c Generated table #811@1: 102626 keys, 2253762 bytes
+2026/03/05-22:42:50.784 2c0c Generated table #812@1: 13043 keys, 447505 bytes
+2026/03/05-22:42:50.784 2c0c Compacted 1@1 + 9@2 files => 18205445 bytes
+2026/03/05-22:42:50.808 2c0c compacted to: files[ 0 0 9 0 0 0 0 ]
+2026/03/05-22:42:50.809 2c0c Delete type=2 #792
+2026/03/05-22:42:50.810 2c0c Delete type=2 #793
+2026/03/05-22:42:50.810 2c0c Delete type=2 #794
+2026/03/05-22:42:50.810 2c0c Delete type=2 #795
+2026/03/05-22:42:50.810 2c0c Delete type=2 #796
+2026/03/05-22:42:50.810 2c0c Delete type=2 #797
+2026/03/05-22:42:50.810 2c0c Delete type=2 #798
+2026/03/05-22:42:50.810 2c0c Delete type=2 #799
+2026/03/05-22:42:50.810 2c0c Delete type=2 #800
+2026/03/05-22:42:50.811 2c0c Delete type=2 #803
